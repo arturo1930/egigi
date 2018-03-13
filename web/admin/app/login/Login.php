@@ -20,6 +20,7 @@ try {
                 
                     $_SESSION['usuario'] = $row['correo'];
                     $_SESSION['nombreUsuario'] = $row['nombre'];
+                    $_SESSION['idUsuario'] = $row['idUsuario'];
                 
                 echo json_encode(array("response" => "ok"));
             } else {
