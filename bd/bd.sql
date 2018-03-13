@@ -1,3 +1,5 @@
+--CARGA DE BASE DE DATOS
+
 CREATE TABLE CONTACTO (
                 idContacto BIGINT AUTO_INCREMENT NOT NULL,
                 correo VARCHAR(256) NOT NULL,
