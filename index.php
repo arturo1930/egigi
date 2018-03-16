@@ -1,6 +1,10 @@
+<?php
+require_once './web/admin/app/connection/Connection.php';
+$connection = new Connection();
+?>
 <!DOCTYPE html>
 <html lang="es">
-    
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,7 +81,7 @@
             </ul>
 
         </div>  
-       -->
+        -->
         <!-- Styleswitcher End
         ================================================== -->
 
@@ -404,9 +408,9 @@
                                         <h4>Marisela Gayosso</h4>
                                         <p>Fundador</p>
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                                            
+                                            <li><a target="_blank" href="https://www.facebook.com/mar.cielo.965"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a target="_blank" href="https://twitter.com/egigicom1"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/in/marisela-gayosso-5092044a/"><i class="fa fa-linkedin"></i></a></li>                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -419,9 +423,9 @@
                                         <h4>Francisco Javier Mungu&iacute;a</h4>
                                         <p>Scrum Master</p>
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                                                                                        
+                                            <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100010600515210"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a target="_blank" href="http://hmvsoluciones.com/cv/fjmv/"><i class="fa fa-magic"></i></a></li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/in/francisco-javier-mungu%C3%ADa-vald%C3%A9s-42682aa6/"><i class="fa fa-linkedin"></i></a></li>                                                                                        
                                         </ul>
                                     </div>
                                 </div>    
@@ -432,25 +436,13 @@
                                         <h4>Luis Arturo Mungu&iacute;a</h4>
                                         <p>Software</p>
                                         <ul>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                                            
+                                            <li><a   href="https://www.facebook.com/luisarturo.munguia.73"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a  href="http://hmvsoluciones.com/cv/lamv/"><i class="fa fa-magic"></i></a></li>
+                                            <li><a  href="https//www.linkedin.com/in/luis-arturo-munguia-valdes-3a015574/"><i class="fa fa-linkedin"></i></a></li>                                            
                                         </ul>
                                     </div>
                                 </div>
-
-                                <div class="team-member">
-                                    <img src="images/team/carlos.png" class="img-responsive" alt="">
-                                    <div class="team-details">
-                                        <h4>Juan Carlos</h4>
-                                        <p>Proveedores</p>
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                                                                                        
-                                        </ul>
-                                    </div>
-                                </div>                                
+                               
                             </div>
                         </div>
                     </div>
@@ -458,7 +450,7 @@
             </div>
         </section>
         <!-- End Team Member Section -->
-        <!-- Start Portfolio Section -->
+        <!-- Start Providers Section -->
         <section id="providers" class="portfolio-section-1">
             <div class="container">
                 <div class="row">
@@ -470,58 +462,40 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="overflow-y: 300px">
 
-                        <!-- Start Portfolio items -->
+                        <!-- Start items -->
                         <ul id="portfolio-list">
-                            <li>
-                                <div class="portfolio-item">
-                                    <img src="images/providers/img1.jpg" class="img-responsive" alt="" />
-                                    <div class="portfolio-caption">
-                                        <h4>Sombreros</h4>
-                                        <a href="#provider-modal" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
-                                        <!-- provider link if the provider has a web page-->
-                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                            <?php
+                            $queryProviders = "SELECT * FROM proveedor";
+
+                            $listProviders = $connection->getAll($queryProviders);
+
+                            foreach ($listProviders as $key => $value) {
+                                ?>
+                                <li>
+                                    <div class="portfolio-item">
+                                        <img src="images/providers/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>" />
+                                        <div class="portfolio-caption">
+                                            <h4>Sombreros</h4>
+                                            <a onclick="loadModalProvider(<?php echo $value['idProveedor'] ?>)" class="link-1"><i class="fa fa-magic"></i></a>
+                                            <!-- provider link if the provider has a web page-->
+                                            <?php if (!empty($value['webUrl'])) { ?>
+                                                <a target="_blank" href="<?php echo $value['webUrl'] ?>" class="link-2"><i class="fa fa-link"></i></a>
+                                            <?php } ?>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>                          
+                                </li>  
+                            <?php } ?>
                         </ul>
-                        <!-- End Portfolio items -->
+                        <!-- End items -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Portfolio Section -->
+        <!-- End Providers Section -->
 
-        <!-- Start Portfolio Modal Section -->
-        <div class="section-modal modal fade" id="provider-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title text-center">
-                            <h3>Sombreros</h3>
-                            <p>Extracción de una base de datos de proveedores, informacion de proveedor</p>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-6">
-                            <img src="images/providers/img1.jpg" class="img-responsive" alt="..">
-                        </div>
-                        
-
-                    </div><!-- /.row -->
-                </div>                
-            </div>
-        </div>
-        <!-- End Portfolio Modal Section -->
         <!-- Start Fun Facts Section -->
         <section class="fun-facts">
             <div class="container">
@@ -558,64 +532,52 @@
             </div>
         </section>
         <!-- End Fun Facts Section -->        
-<!-- Start Latest News Section -->
+
+
+        <!-- Start Latest News Section -->
         <section id="latest-news" class="latest-news-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title text-center">
-                            <h3>Blog</h3>                            
+                            <h3>Blog</h3>
+                            <p>Articulos de intres para t&iacute;</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row">                
                     <div class="latest-news">
-                        <div class="col-md-12">
-                            <div class="latest-post">
-                                <img src="images/blog/about-01.jpg" class="img-responsive" alt="">
-                                <h4><a href="#">Comercio electr&oacute;onico 2018</a></h4>
-                                <div class="post-details">
-                                    <span class="date"><strong>18</strong> <br>Enero , 2018</span>
 
+                        <?php
+                        $query = "SELECT * FROM blog";
+
+                        $list = $connection->getAll($query);
+
+                        foreach ($list as $key => $value) {
+                            ?>
+
+                            <div class="col-md-12">
+                                <div class="latest-post">
+                                    <img src="images/blog/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>">
+                                    <h4><a><?php echo $value['nombre'] ?></a></h4>
+                                    <div class="post-details">
+                                        <span class="date">
+                                            <strong><?php echo date("d", strtotime($value['fecha'])) ?></strong> 
+                                            <br><?php echo date("m, Y", strtotime($value['fecha'])) ?>
+                                        </span>
+
+                                    </div>
+                                    <!--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>-->
+                                    <a onclick="loadModalBlog(<?php echo $value['idBlog'] ?>)"class="btn btn-primary">Leer mas</a>
                                 </div>
-                                <p>COMERCIO ELECTRÓNICO: MÁS DE 2 MIL BILLONES DE DÓLARES EN VENTAS PARA 2018. ¿ESTARÁS ALL&Iacute;?.</p>
-                                
-                                <a href="#blog-modal" data-toggle="modal" class="link-1">Leer m&aacute;s</a>
                             </div>
-                        </div>                       
-                    </div>
+                        <?php } ?>
+                    </div
                 </div>
             </div>
         </section>
-<!-- Start Portfolio Modal Section -->
-        <div class="section-modal modal fade" id="blog-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
+        <!-- End Latest News Section -->
 
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title text-center">
-                            <h3>Nombre Articulo</h3>
-                            <p>Extracción de una base de datos de articulos</p>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-6">
-                            <img src="images/providers/img1.jpg" class="img-responsive" alt="..">
-                        </div>
-                        
-
-                    </div><!-- /.row -->
-                </div>                
-            </div>
-        </div>
-        <!-- End Blog Modal Section -->
         <!-- End Latest News Section -->
         <section id="contact" class="contact">
             <div class="container">
@@ -693,23 +655,24 @@
                                 <ul>
                                     <li><a href="https://twitter.com/egigicom1"><i class="fa fa-twitter"></i></a></li>
                                     <li><a href="https://www.facebook.com/egigimexico/"><i class="fa fa-facebook"></i></a></li>
-                                    
-                                    
-                                    
+
+
+
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-4 col-xs-12">
                             <div class="footer-link">
                                 <ul class="pull-right">
-<!--                                    <li><a href="#">Privacy Policy</a>
-                                    </li>
-                                    <li><a href="#">Terms of Use</a>
-                                    </li>-->
+                                    <!--                                    <li><a href="#">Privacy Policy</a>
+                                                                        </li>
+                                                                        <li><a href="#">Terms of Use</a>
+                                                                        </li>-->
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </footer>
         </section>
@@ -722,7 +685,48 @@
             </div>
         </div>
 
+        <!-- Start Providers Modal Section -->
+        <div class="section-modal modal fade" id="egigiModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row" id='egigiModalContent'>
 
+                    </div> 
+                    <div class="row" id="eggiFormContent">
+                        <form name="sentMessage" id="contactForm" novalidate="">
+                            <div class="row">
+                                <div class="col-lg-5 text-center">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nombre *" id="name" required="" data-validation-required-message="Por favor ingrese el nombre.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email *" id="email" required="" data-validation-required-message="por favor ingrese la dirección de correo." aria-invalid="false">
+                                        <p class="help-block text-danger"></p>
+                                    </div>                                    
+
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Mensaje *" id="message" required="" data-validation-required-message="Por favor ingrese un mensaje."></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+
+
+                                    <div id="success"></div>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <!-- End Providers Modal Section -->
 
         <!-- jQuery Version 2.1.1 -->
         <script src="js/jquery-2.1.1.min.js"></script>
@@ -746,7 +750,7 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="js/script.js"></script>
-        
+
 
     </body>
 

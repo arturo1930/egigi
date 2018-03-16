@@ -19,10 +19,12 @@ CREATE TABLE USUARIO (
 
 
 CREATE TABLE PROVEEDOR (
-                idProveedor BIGINT NOT NULL,
+                idProveedor BIGINT AUTO_INCREMENT NOT NULL,
                 idUsuario BIGINT NOT NULL,
                 nombre VARCHAR(100) NOT NULL,
                 webUrl VARCHAR(256),
+                img VARCHAR(256),
+                imgAlt VARCHAR(256),
                 PRIMARY KEY (idProveedor)
 );
 
