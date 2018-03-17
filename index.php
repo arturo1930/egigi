@@ -58,6 +58,11 @@ $connection = new Connection();
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <script>
+            function openLink(link) {
+                window.open(link);
+            }
+        </script>
 
     </head>
 
@@ -408,9 +413,9 @@ $connection = new Connection();
                                         <h4>Marisela Gayosso</h4>
                                         <p>Fundador</p>
                                         <ul>
-                                            <li><a target="_blank" href="https://www.facebook.com/mar.cielo.965"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a target="_blank" href="https://twitter.com/egigicom1"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a target="_blank" href="https://www.linkedin.com/in/marisela-gayosso-5092044a/"><i class="fa fa-linkedin"></i></a></li>                                            
+                                            <li><a onclick="openLink('https://www.facebook.com/mar.cielo.965')"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a onclick="openLink('https://twitter.com/egigicom1')"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a onclick="openLink('https://www.linkedin.com/in/marisela-gayosso-5092044a/')"><i class="fa fa-linkedin"></i></a></li>                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -423,9 +428,9 @@ $connection = new Connection();
                                         <h4>Francisco Javier Mungu&iacute;a</h4>
                                         <p>Scrum Master</p>
                                         <ul>
-                                            <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100010600515210"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a target="_blank" href="http://hmvsoluciones.com/cv/fjmv/"><i class="fa fa-magic"></i></a></li>
-                                            <li><a target="_blank" href="https://www.linkedin.com/in/francisco-javier-mungu%C3%ADa-vald%C3%A9s-42682aa6/"><i class="fa fa-linkedin"></i></a></li>                                                                                        
+                                            <li><a onclick="openLink('https://www.facebook.com/profile.php?id=100010600515210')"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a onclick="openLink('http://hmvsoluciones.com/cv/fjmv/')"><i class="fa fa-magic"></i></a></li>
+                                            <li><a onclick="openLink('https://www.linkedin.com/in/francisco-javier-mungu%C3%ADa-vald%C3%A9s-42682aa6/')"><i class="fa fa-linkedin"></i></a></li>                                                                                        
                                         </ul>
                                     </div>
                                 </div>    
@@ -436,13 +441,13 @@ $connection = new Connection();
                                         <h4>Luis Arturo Mungu&iacute;a</h4>
                                         <p>Software</p>
                                         <ul>
-                                            <li><a   href="https://www.facebook.com/luisarturo.munguia.73"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a  href="http://hmvsoluciones.com/cv/lamv/"><i class="fa fa-magic"></i></a></li>
-                                            <li><a  href="https//www.linkedin.com/in/luis-arturo-munguia-valdes-3a015574/"><i class="fa fa-linkedin"></i></a></li>                                            
+                                            <li><a  onclick="openLink('https://www.facebook.com/luisarturo.munguia.73')"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a  onclick="openLink('http://hmvsoluciones.com/cv/lamv/')"><i class="fa fa-magic"></i></a></li>
+                                            <li><a  onclick="openLink('https://www.linkedin.com/in/luis-arturo-munguia-valdes-3a015574/')"><i class="fa fa-linkedin"></i></a></li>                                            
                                         </ul>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
