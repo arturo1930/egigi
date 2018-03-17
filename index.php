@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once './web/admin/app/connection/Connection.php';
 $connection = new Connection();
 ?>
@@ -15,43 +18,43 @@ $connection = new Connection();
         <title>e-gigi.com</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+        <link href="resources/asset/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Font Awesome CSS -->
-        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="resources/css/font-awesome.min.css" rel="stylesheet">
 
 
         <!-- Animate CSS -->
-        <link href="css/animate.css" rel="stylesheet" >
+        <link href="resources/css/animate.css" rel="stylesheet" >
 
         <!-- Owl-Carousel -->
-        <link rel="stylesheet" href="css/owl.carousel.css" >
-        <link rel="stylesheet" href="css/owl.theme.css" >
-        <link rel="stylesheet" href="css/owl.transitions.css" >
+        <link rel="stylesheet" href="resources/css/owl.carousel.css" >
+        <link rel="stylesheet" href="resources/css/owl.theme.css" >
+        <link rel="stylesheet" href="resources/css/owl.transitions.css" >
 
         <!-- Custom CSS -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/responsive.css" rel="stylesheet">
+        <link href="resources/css/style.css" rel="stylesheet">
+        <link href="resources/css/responsive.css" rel="stylesheet">
 
         <!-- Colors CSS -->
-        <link rel="stylesheet" type="text/css" href="css/color/green.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/green.css">
 
 
 
         <!-- Colors CSS -->
-        <link rel="stylesheet" type="text/css" href="css/color/green.css" title="green">
-        <link rel="stylesheet" type="text/css" href="css/color/light-red.css" title="light-red">
-        <link rel="stylesheet" type="text/css" href="css/color/blue.css" title="blue">
-        <link rel="stylesheet" type="text/css" href="css/color/light-blue.css" title="light-blue">
-        <link rel="stylesheet" type="text/css" href="css/color/yellow.css" title="yellow">
-        <link rel="stylesheet" type="text/css" href="css/color/light-green.css" title="light-green">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/green.css" title="green">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/light-red.css" title="light-red">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/blue.css" title="blue">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/light-blue.css" title="light-blue">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/yellow.css" title="yellow">
+        <link rel="stylesheet" type="text/css" href="resources/css/color/light-green.css" title="light-green">
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 
 
         <!-- Modernizer js -->
-        <script src="js/modernizr.custom.js"></script>
+        <script src="resources/js/modernizr.custom.js"></script>
 
 
         <!--[if lt IE 9]>
@@ -160,7 +163,7 @@ $connection = new Connection();
                 <!-- Carousel inner -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="images/egigi/mexico_charro.png" alt="artesanias mexicanas">
+                        <img class="img-responsive" src="resources/images/egigi/mexico_charro.png" alt="artesanias mexicanas">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h1 class="animated3">
@@ -176,7 +179,7 @@ $connection = new Connection();
                     <!--/ Carousel item end -->
 
                     <div class="item">
-                        <img class="img-responsive" src="images/egigi/mexico_artesanias.png" alt="slider">
+                        <img class="img-responsive" src="resources/images/egigi/mexico_artesanias.png" alt="slider">
 
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
@@ -191,7 +194,7 @@ $connection = new Connection();
                     <!--/ Carousel item end -->
 
                     <div class="item">
-                        <img class="img-responsive" src="images/egigi/mexico_recuerdos.png" alt="slider">
+                        <img class="img-responsive" src="resources/images/egigi/mexico_recuerdos.png" alt="slider">
                         <div class="slider-content">
                             <div class="col-md-12 text-center">
                                 <h1 class="animated2">
@@ -295,7 +298,7 @@ $connection = new Connection();
 
                     <div class="col-md-4">
                         <div class="welcome-section text-center">
-                            <img src="images/egigi/team.png" class="img-responsive" alt="..">
+                            <img src="resources/images/egigi/team.png" class="img-responsive" alt="..">
                             <h4>Filosof&iacute;a</h4>
                             <div class="border"></div>
                             <p>Trabajando en un equipo colaborativo impulsamos la calidad mexicana al comercio nacional e internacional.</p>
@@ -304,7 +307,7 @@ $connection = new Connection();
 
                     <div class="col-md-4">
                         <div class="welcome-section text-center">
-                            <img src="images/egigi/mision.png" class="img-responsive" alt="..">
+                            <img src="resources/images/egigi/mision.png" class="img-responsive" alt="..">
                             <h4>Misi&oacute;n</h4>
                             <div class="border"></div>
                             <p>                            
@@ -315,7 +318,7 @@ $connection = new Connection();
 
                     <div class="col-md-4">
                         <div class="welcome-section text-center">
-                            <img src="images/egigi/vision.png" class="img-responsive" alt="..">
+                            <img src="resources/images/egigi/vision.png" class="img-responsive" alt="..">
                             <h4>Visi&oacute;n</h4>
                             <div class="border"></div>
                             <p>                            
@@ -408,7 +411,7 @@ $connection = new Connection();
 
                             <div class="our-team">
                                 <div class="team-member">
-                                    <img src="images/team/marisela.png" class="img-responsive" alt="">
+                                    <img src="resources/images/team/marisela.png" class="img-responsive" alt="">
                                     <div class="team-details">
                                         <h4>Marisela Gayosso</h4>
                                         <p>Fundador</p>
@@ -423,7 +426,7 @@ $connection = new Connection();
 
 
                                 <div class="team-member">
-                                    <img src="images/team/javier.png" class="img-responsive" alt="">
+                                    <img src="resources/images/team/javier.png" class="img-responsive" alt="">
                                     <div class="team-details">
                                         <h4>Francisco Javier Mungu&iacute;a</h4>
                                         <p>Scrum Master</p>
@@ -436,7 +439,7 @@ $connection = new Connection();
                                 </div>    
 
                                 <div class="team-member">
-                                    <img src="images/team/arturo.png" class="img-responsive" alt="">
+                                    <img src="resources/images/team/arturo.png" class="img-responsive" alt="">
                                     <div class="team-details">
                                         <h4>Luis Arturo Mungu&iacute;a</h4>
                                         <p>Software</p>
@@ -480,7 +483,7 @@ $connection = new Connection();
                                 ?>
                                 <li>
                                     <div class="portfolio-item">
-                                        <img src="images/providers/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>" />
+                                        <img src="resources/images/providers/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>" />
                                         <div class="portfolio-caption">
                                             <h4>Sombreros</h4>
                                             <a onclick="loadModalProvider(<?php echo $value['idProveedor'] ?>)" class="link-1"><i class="fa fa-magic"></i></a>
@@ -563,7 +566,7 @@ $connection = new Connection();
 
                             <div class="col-md-12">
                                 <div class="latest-post">
-                                    <img src="images/blog/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>">
+                                    <img src="resources/images/blog/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>">
                                     <h4><a><?php echo $value['nombre'] ?></a></h4>
                                     <div class="post-details">
                                         <span class="date">
@@ -734,27 +737,27 @@ $connection = new Connection();
         <!-- End Providers Modal Section -->
 
         <!-- jQuery Version 2.1.1 -->
-        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="resources/js/jquery-2.1.1.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src="asset/js/bootstrap.min.js"></script>
+        <script src="resources/asset/js/bootstrap.min.js"></script>
 
         <!-- Plugin JavaScript -->
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/classie.js"></script>
-        <script src="js/count-to.js"></script>
-        <script src="js/jquery.appear.js"></script>
-        <script src="js/cbpAnimatedHeader.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/styleswitcher.js"></script>
+        <script src="resources/js/jquery.easing.1.3.js"></script>
+        <script src="resources/js/classie.js"></script>
+        <script src="resources/js/count-to.js"></script>
+        <script src="resources/js/jquery.appear.js"></script>
+        <script src="resources/js/cbpAnimatedHeader.js"></script>
+        <script src="resources/js/owl.carousel.min.js"></script>
+        <script src="resources/js/jquery.fitvids.js"></script>
+        <script src="resources/js/styleswitcher.js"></script>
 
         <!-- Contact Form JavaScript -->
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
+        <script src="resources/js/jqBootstrapValidation.js"></script>
+        <script src="resources/js/contact_me.js"></script>
 
         <!-- Custom Theme JavaScript -->
-        <script src="js/script.js"></script>
+        <script src="resources/js/script.js"></script>
 
 
     </body>
