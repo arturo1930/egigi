@@ -1,0 +1,6 @@
+RewriteEngine On
+        RewriteCond %{HTTP_HOST} ^e-gigi.com$
+        RewriteRule ^$ http://www.e-gigi.com/shop/index.php [L,R=301]
+
+        RewriteCond %{HTTP_HOST} ^www.e-gigi.com$
+        RewriteRule ^$ http://www.e-gigi.com/shop/index.php [L,R=301]

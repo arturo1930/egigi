@@ -53,7 +53,6 @@ function loadModalProvider(idProvider) {
 
 
 }
-
 function loadModalBlog(idBlog) {
     
     var params = {
@@ -69,7 +68,7 @@ function loadModalBlog(idBlog) {
         
         var template = "<div class='section-title text-center'>";
         template += "<h3>" + data.blog.nombre + "</h3>";
-        template += "<p align='center'><img style='width: 150px' src='images/blog/" + data.blog.img + "' class='img-responsive img-rounded' alt='" + data.blog.imgAlt + "'/></p>";
+        template += "<p align='center'><img style='width: 150px' src='resources/images/blog/" + data.blog.img + "' class='img-responsive img-rounded' alt='" + data.blog.imgAlt + "'/></p>";
         $.each(data.blogInfo, function (i, v) {
             template += "<p>" + v.contenido + "</p>";
         });

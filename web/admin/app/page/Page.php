@@ -12,7 +12,7 @@ try {
 
     switch ($_REQUEST['op']) {
         case "infoProvider":
-            $query = "SELECT * FROM proveedor WHERE idProveedor = {$_REQUEST['idProvider']}";
+            $query = "SELECT * FROM PROVEEDOR WHERE idProveedor = {$_REQUEST['idProvider']}";
             $queryInfo = "SELECT * FROM parrafo_proveedor WHERE idProveedor = {$_REQUEST['idProvider']} ORDER BY idParrafoProveedor";
             $provider = $connection->getRow($query);
             $providerInfo = $connection->getAll($queryInfo);
@@ -24,8 +24,8 @@ try {
 
             break;
         case "infoBlog":
-            $query = "SELECT * FROM blog WHERE idBlog = {$_REQUEST['idBlog']}";
-            $queryInfo = "SELECT * FROM parrafo WHERE idBlog = {$_REQUEST['idBlog']} ORDER BY idParrafo";
+            $query = "SELECT * FROM BLOG WHERE idBlog = {$_REQUEST['idBlog']}";
+            $queryInfo = "SELECT * FROM PARRAFO WHERE idBlog = {$_REQUEST['idBlog']} ORDER BY idParrafo";
             $provider = $connection->getRow($query);
             $providerInfo = $connection->getAll($queryInfo);
             

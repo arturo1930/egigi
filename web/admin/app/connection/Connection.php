@@ -12,7 +12,9 @@ class Connection {
         $config = parse_ini_file(__DIR__ . '../../config/config.ini');
 
         $this->conection = mysqli_connect($config['server'], $config['username'], $config['password'], $config['dbname']);
-
+        $this->conection->set_charset("utf8");
+        //mysqli_set_charset($this->conection, "utf8");
+       
         if (mysqli_connect_errno()) {
             throw new Exception('No fue posible conectarse con la base de datos.');
         }
@@ -34,7 +36,7 @@ class Connection {
     public function getAll($query) {
         $prepare = mysqli_query($this->getConection(), $query);
         $result = mysqli_fetch_all($prepare, MYSQLI_ASSOC);
-
+        
         return $result;
     }
 

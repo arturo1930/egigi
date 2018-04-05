@@ -12,7 +12,7 @@ try {
 
     switch ($_REQUEST['op']) {
         case "blog":
-            $query = "SELECT b.*, u.nombre as usuario FROM blog b INNER JOIN usuario u ON b.idUsuario = u.idUsuario";
+            $query = "SELECT b.*, u.nombre as usuario FROM BLOG b INNER JOIN USUARIO u ON b.idUsuario = u.idUsuario";
 
             $list = $connection->getAll($query);
 
@@ -20,7 +20,7 @@ try {
 
             break;
         case "addBlog":
-            $query = "INSERT INTO blog(idUsuario, nombre, img, imgAlt, fecha, hora) VALUES "
+            $query = "INSERT INTO BLOG(idUsuario, nombre, img, imgAlt, fecha, hora) VALUES "
                     . "({$_SESSION['idUsuario']}, '{$_REQUEST['nombre']}', '{$_REQUEST['img']}', '{$_REQUEST['imgAlt']}', CURDATE(), CURTIME()); ";
 
             if ($connection->executeQuery($query)) {
@@ -33,7 +33,7 @@ try {
 
             break;
         case "eliminarContacto":
-            $query = "DELETE FROM contacto WHERE idContacto = {$_REQUEST['idContacto']}";
+            $query = "DELETE FROM CONTACTO WHERE idContacto = {$_REQUEST['idContacto']}";
             if ($connection->executeQuery($query)) {
                 echo json_encode(array("response" => "ok"));
             } else {

@@ -475,7 +475,7 @@ $connection = new Connection();
                         <!-- Start items -->
                         <ul id="portfolio-list">
                             <?php
-                            $queryProviders = "SELECT * FROM proveedor";
+                            $queryProviders = "SELECT * FROM PROVEEDOR";
 
                             $listProviders = $connection->getAll($queryProviders);
 
@@ -553,12 +553,11 @@ $connection = new Connection();
                         </div>
                     </div>
                 </div>
-                <div class="row">                
+                <div class="row">                     
                     <div class="latest-news">
 
                         <?php
-                        $query = "SELECT * FROM blog";
-
+                        $query = "SELECT * FROM BLOG";
                         $list = $connection->getAll($query);
 
                         foreach ($list as $key => $value) {
@@ -566,7 +565,7 @@ $connection = new Connection();
 
                             <div class="col-md-12">
                                 <div class="latest-post">
-                                    <img src="resources/images/blog/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>">
+                                    <img  width="360px" height="238px" src="resources/images/blog/<?php echo $value['img'] ?>" class="img-responsive" alt="<?php echo $value['imgAlt'] ?>">
                                     <h4><a><?php echo $value['nombre'] ?></a></h4>
                                     <div class="post-details">
                                         <span class="date">
@@ -576,7 +575,8 @@ $connection = new Connection();
 
                                     </div>
                                     <!--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>-->
-                                    <a onclick="loadModalBlog(<?php echo $value['idBlog'] ?>)"class="btn btn-primary">Leer mas</a>
+                                    <!--<a onclick="loadModalBlog(<?php echo $value['idBlog'] ?>)"class="btn btn-primary">Leer mas</a>-->
+                                    <a onclick="openLink('<?php echo $value['imgAlt'] ?>')"class="btn btn-primary">Leer mas</a>
                                 </div>
                             </div>
                         <?php } ?>
@@ -707,7 +707,7 @@ $connection = new Connection();
 
                     </div> 
                     <div class="row" id="eggiFormContent">
-                        <form name="sentMessage" id="contactForm" novalidate="">
+<!--                        <form name="sentMessage" id="contactForm" novalidate="">
                             <div class="row">
                                 <div class="col-lg-5 text-center">
                                     <div class="form-group">
@@ -729,7 +729,7 @@ $connection = new Connection();
                                     <button type="submit" class="btn btn-primary">Enviar</button>
                                 </div>
                             </div>
-                        </form>
+                        </form>-->
                     </div>
                 </div>                
             </div>
